@@ -13,6 +13,7 @@
   function modalShow(btn, modal){
     btn.forEach((item)=>{
       item.addEventListener('click', (e)=>{
+        document.body.style.overflow = 'hidden';
         overlay.classList.add('overlay_active');
         const target = e.target;
         if(modal && modal.classList.contains('order')){
@@ -30,6 +31,7 @@
       });
   }
   function modalAllClose(){
+    document.body.style.overflow = 'scroll';
     overlay.classList.remove('overlay_active');
     modalConsult.classList.remove('overlay_consultation_active');
     modalOrder.classList.remove('order_active');
